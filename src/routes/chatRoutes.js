@@ -1,16 +1,19 @@
 import express from "express";
 import { chatWithSession } from "../services/chatService.js";
 import { getChatHistory } from "../services/storeService.js";
+import { ipRateLimiter } from "../middlewares/rateLimiter.js";
+import { MAX_QUERY_LENGTH } from "../config/constants.js";
+
 
 const router = express.Router();
 
-const MAX_QUERY_LENGTH = 1000;
+
 
 /**
  * POST /chat
  * Send a chat message
  */
-router.post("/", async (req, res) => {
+router.post("/",ipRateLimiter, async (req, res) => {
   try {
     const { query, sessionId } = req.body;
 
@@ -19,6 +22,32 @@ router.post("/", async (req, res) => {
         status: 400,
         data: { reply: null, createdAt: null },
         message: "query and sessionId are required"
+      });
+    }
+
+       const lowerQuery = query.toLowerCase();
+
+    // Short greeting
+    if (lowerQuery.length <= 3) {
+      if (lowerQuery.includes("hi") || lowerQuery.includes("hello")) {
+        return res.status(200).json({
+          status: 200,
+          data: {
+            reply: "Hi! How are you? How can I help you today?",
+            createdAt: new Date().toISOString()
+          },
+          message: "Greeting response"
+        });
+      }
+
+      // Generic short query response
+      return res.status(200).json({
+        status: 200,
+        data: {
+          reply: "Welcome to Spur! How can I help you today?",
+          createdAt: new Date().toISOString()
+        },
+        message: "Short query"
       });
     }
 
@@ -40,7 +69,7 @@ router.post("/", async (req, res) => {
 
     return res.status(200).json({
       status: 200,
-      data: replyObj, // <-- already has reply + createdAt
+      data: replyObj, 
       message: "Chat processed successfully"
     });
 

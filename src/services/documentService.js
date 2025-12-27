@@ -106,12 +106,12 @@ export async function searchDocuments3(query, limit = TOP_K_LIMIT) {
     limit
   });
 
-  for (const doc of filteredVectorResults) {
-  console.log(`ID: ${doc.id}`);
-  console.log(`Distance: ${doc.get("distance")}`); // distance stored in attribute
-  console.log(`Content: ${doc.content}`);
-  console.log("---------------------------");
-}
+//   for (const doc of filteredVectorResults) {
+//   console.log(`ID: ${doc.id}`);
+//   console.log(`Distance: ${doc.get("distance")}`); // distance stored in attribute
+//   console.log(`Content: ${doc.content}`);
+//   console.log("---------------------------");
+// }
 
   // ----------------- MERGE & DEDUP -----------------
   const map = new Map();

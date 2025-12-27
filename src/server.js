@@ -22,6 +22,9 @@ import sequelize from "../src/db/client.js";
 const server = express();
 import cors from "cors";
 
+import { ipRateLimiter } from "./middlewares/rateLimiter.js";
+server.set("trust proxy", true);
+
 server.use(cors({
   origin: "http://localhost:5173",
   credentials: true
@@ -34,7 +37,7 @@ server.use(express.json());
 server.use("/api/chat", chatRoutes);
 
 // Root test endpoint
-server.get("/", (req, res) => {
+server.get("/",ipRateLimiter, (req, res) => {
   res.send("Server is running!");
 });
 

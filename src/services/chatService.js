@@ -1,13 +1,12 @@
+import { MAX_HISTORY, TOP_K } from "../config/constants.js";
 import { SYSTEM_PROMPT } from "../config/prompt.js";
 import { searchDocuments3 } from "./documentService.js";
 import { generateGroqReply2 } from "./llmService.js";
 import { saveMessages,getLatestAssistantMessage } from "./storeService.js";
 
 
-const TOP_K = 5;
-const MAX_HISTORY = 10;
-
 const sessionHistories = new Map();
+//i  sould replace with redis 
 
 export async function chatWithSession(sessionId, query) {
   try {

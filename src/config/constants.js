@@ -1,6 +1,9 @@
 export const EMBEDDING_MODEL = "Xenova/all-MiniLM-L6-v2";
-
 export const MIN_EMBED_TEXT_LENGTH = 3;
 export const MAX_EMBED_TEXT_LENGTH = 2000;
 export const TOP_K_LIMIT = 5
 export const RATE_LIMIT_RATE_API = 20 
+export const MAX_QUERY_LENGTH = 1000;
+export const TOP_K = 5;
+export const MAX_HISTORY = 10;
+export const VEC_MAX_DISTANCE = 1.9

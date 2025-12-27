@@ -1,9 +1,12 @@
 import fs from "fs";
+import path from "path";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { ingestDocument } from "./services/documentService.js";
 
 // Read file
-const filePath = "C:\\Users\\HP\\Desktop\\spur_final\\src\\spur_know.txt";
+// const filePath = "C:\\Users\\HP\\Desktop\\spur_final\\src\\spur_know.txt";
+my_file="spur_know.txt"
+const filePath = path.join(process.cwd(), "src", my_file);
 const spurText = fs.readFileSync(filePath, "utf-8");
 
 async function run() {
