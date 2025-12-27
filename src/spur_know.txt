@@ -1,0 +1,124 @@
+{Overview}
+Spur - Sell More. Support Better. Automate Everything
+Spur is a multi-channel AI Agent for marketing and customer support. It helps businesses sell more, support better, and automate customer engagement across multiple channels including WhatsApp, Instagram, Facebook, and website chat.
+
+{Core Offerings}
+1. AI Live Chat: AI-powered customer support resolving up to 70% of queries instantly, context-aware natural language responses, escalates complex queries to human agents.
+2. WhatsApp Business API: Automated order updates, abandoned cart recovery, personalized product recommendations; integrates with Razorpay, Stripe.
+3. Instagram & Facebook Automation: Automates DMs and comment replies, qualifies leads and engages customers automatically.
+4. Multi-Channel Inbox & CRM: Unified inbox, ticketing system, custom fields, team collaboration features.
+5. Marketing Automation Suite: Bulk messaging to thousands of customers, event-triggered automated messages for abandoned carts, forms, etc.
+6. Chat Widgets: Website integration for 24/7 AI chat, converts visitors into leads.
+
+{Key Features}
+- Automation of repetitive tasks and messaging.
+- Comment-to-DM automation for social platforms.
+- Lead capture and qualification workflows.
+- Payment link generation and checkout automation.
+- Multilingual support and easy no-code setup.
+- Actionable AI integrates with external systems for real-time updates.
+- Seamless handover to human agents when necessary.
+
+{Industries Served}
+- Travel & Hospitality
+- Offline & Retail
+- Real Estate
+- Education
+- Events & Webinars
+- Finance & Insurance
+
+{Integrations}
+- Shopify, WooCommerce
+- Razorpay, Stripe
+- Shiprocket, Return Prime
+- One-click checkout solutions like GoKwik, Simpl
+
+{How It Works}
+1. Connect channels: Website, Instagram, Facebook, WhatsApp
+2. Add knowledge sources and train AI
+3. Deploy AI agents for customer queries and tasks
+4. Route complex issues to human agents
+5. Refine workflows based on insights and analytics
+6. Launch marketing automation campaigns
+
+{Security & Compliance}
+- GDPR-compliant
+- Meta Business Partner
+- Data encryption and secure storage
+- SOC 2-level practices applied to certain products
+
+{Customer Testimonials}
+- Reduced escalations by 90%, increased resolution speed by 10x, improved CSAT by 30%
+- Customers praise automation, responsive support, ready-to-deploy flows
+
+{Company Information}
+- Founded: 2022
+- Headquarters: New Delhi, India
+- Founders: Rohan Rajpal and Royal Tomar
+- Focus: E-commerce brands automation for customer engagement and marketing
+
+{Resources}
+- Blog, Help Center, API Documentation, Case Studies, Pitch Deck, Partner Programs, Integrations guides
+
+{Pricing & Plans}
+AI-powered marketing & support to scale your business
+Try any plan free for 7 days with full access to all features
+Billing: Monthly / Annually (20% Off)
+Currency: INR (₹)
+
+{Plan 1: AI Acquire}
+Price: ₹799/month, ₹9,590 annually
+Free Trial: 7 Days
+Features: Unlimited Contacts, Instagram Automation, Click-to-DM Ads, Shared Inbox (WA, IG, FB, Live Chat), 3 Automation Flows, 1 AI Agent (100 credits), 1 User Seat, Channels: 1 Live Chat, 1 WA, 1 IG, 1 FB, Email Support
+
+{Plan 2: AI Start}
+Price: ₹2,799/month, ₹33,590 annually
+Free Trial: 7 Days
+Includes AI Acquire + Shopify Integration, WhatsApp Automation, Click-to-WA Ads, 25 Automation Flows, 1 AI Agent (2,000 credits), 2 User Seats, Channels: 1 Live Chat, 1 WA, 1 IG, 1 FB, Priority Email Support
+
+{Plan 3: AI Accelerate}
+Price: ₹10,399/month, ₹1,24,790 annually
+Free Trial: 7 Days
+Includes AI Start + 2 AI Agents (12,000 credits), 5 User Seats, Channels: 2 Live Chat, 2 WA, 2 IG, 2 FB, 50 Automation Flows, Webhook Trigger, Custom AI Actions, Custom Integrations, Priority WhatsApp Support
+
+{Plan 4: AI Max}
+Price: ₹31,999/month, ₹3,83,990 annually
+Free Trial: 7 Days
+Includes AI Accelerate + Unlimited Automation Flows, Exclusive Bulk WhatsApp Pricing, 3 AI Agents (40,000 credits), 10 User Seats, Channels: 3 Live Chat, 3 WA, 3 IG, 3 FB, Dedicated Account Manager
+
+{Unlimited in All Plans}
+- Unlimited Contacts, Teams, WhatsApp Broadcasts, Automation Executions, Tags, Tickets
+
+{Add-Ons}
+1) Additional AI Agent (Popular): ₹599/month, handle specialized inquiries
+2) Live Chat Channel: ₹599/month, engage more customers
+3) Remove Branding (PREMIUM): ₹2,999/month, white-label experience
+4) AI Credits: ₹999/1,000 credits, credits never expire
+5) Additional WhatsApp Channel: ₹1,999/month
+6) Instagram/Facebook Channel: ₹999/month
+7) Additional User: ₹999/month
+
+{Support & Contact}
+Email: spurchatbot@gmail.com
+WhatsApp: +91 95990 55272
+
+{Company Details}
+Spurtastic Technologies Private Limited
+A-1/75 SF, Kh No 152/1, Freedom Fighter Enclave, Neb Sarai, South West Delhi, New Delhi – 110068
+© 2025 Spurtastic Technologies Private Limited
+
+{Powered by AI Models}
+- OpenAI, Claude, Gemini, Grok
+
+{Frequently Asked Questions (FAQ)}
+1) How many contacts can I have? {Answer: Unlimited in all plans}
+2) What if I send multiple messages to one contact? {Answer: You can send as many as needed}
+3) Do you offer a free trial? {Answer: 7 days free with full features}
+4) Do you provide on-call support? {Answer: Chat support only, no call support}
+5) I need a demo before I can make a decision {Answer: Book personalized demo via link}
+6) How do I change my plan? {Answer: Settings > Plans & Usage, upgrade/downgrade anytime}
+7) How do I pay? {Answer: Major credit cards, bank/check transfers; no UPI/digital wallets for India}
+8) Can I get a refund? {Answer: Subscription & WhatsApp charges are non-refundable; remaining wallet/credits are forfeited on cancellation}
+9) Are your automations approved by Meta? {Answer: Yes, official Meta Tech Provider}
+10) Does AI Acquire include WhatsApp automation? {Answer: No, only higher-tier plans include WhatsApp automation}
+11) Is Instagram & Facebook Messenger API free? {Answer: Yes, included in plans}
