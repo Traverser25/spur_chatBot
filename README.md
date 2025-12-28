@@ -28,6 +28,10 @@ You can plug in your business content, run the ingestion process, and deploy the
 
 ## Architecture Overview
 
+
+
+![Spur AI Chatbot Architecture](./Screenshot%202025-12-28%20111122.png)
+
 The chatbot follows a **Retrieval Augmented Generation (RAG)** approach:
 
 1. User sends a query from the frontend
