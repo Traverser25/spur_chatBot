@@ -348,7 +348,9 @@ This will install all backend dependencies.
 
 Once dependencies are installed, start the server once:
 
-npm run dev
+by  doing  :-
+
+node /src/server2/js
 
 On first run, the project will automatically create the required
 PostgreSQL tables and indexes (including vector indexes).
