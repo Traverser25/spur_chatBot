@@ -25,7 +25,7 @@ router.post("/",ipRateLimiter, async (req, res) => {
       });
     }
 
-       const lowerQuery = query.toLowerCase();
+    const lowerQuery = query.toLowerCase();
 
     // Short greeting
     if (lowerQuery.length <= 3) {
@@ -65,7 +65,7 @@ router.post("/",ipRateLimiter, async (req, res) => {
     }
 
     // -------- Call chat service --------
-    const replyObj = await chatWithSession(sessionId, query); // { reply, createdAt }
+    const replyObj = await chatWithSession(sessionId, query); // { reply, cre 
 
     return res.status(200).json({
       status: 200,

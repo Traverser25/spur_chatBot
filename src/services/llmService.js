@@ -1,90 +1,8 @@
-//import OpenAI from "openai";
+import OpenAI from "openai";
 import axios from "axios";
 import { SYSTEM_PROMPT, DEFAULT_USER_PROMPT } from "../config/prompt.js";
 import dotenv from "dotenv";
 dotenv.config();
-
-
-// Initialize OpenAI client
-// const openai = new OpenAI({
-//   apiKey: process.env.OPENAI_API_KEY
-// });
-
-// Initialize Groq axios instance
-// const GROQ_API_KEY = process.env.GROK_API_KEY;
-
-// console.log("here is the key",GROQ_API_KEY)
-// const groq = axios.create({
-//   baseURL: "https://api.groq.com/openai/v1/chat",
-//   headers: {
-//     "Authorization": `Bearer ${GROQ_API_KEY}`,
-//     "Content-Type": "application/json"
-//   }
-// });
-
-/**
- * Generate reply using OpenAI
- */
-// export async function generateOpenAIReply(userMessage, context = "") {
-//   try {
-//     const prompt = `${SYSTEM_PROMPT}\nContext: ${context}\n${DEFAULT_USER_PROMPT(userMessage)}`;
-
-//     const response = await openai.chat.completions.create({
-//       model: "gpt-4o-mini",
-//       messages: [
-//         { role: "system", content: SYSTEM_PROMPT },
-//         { role: "user", content: prompt }
-//       ],
-//       temperature: 0.2,
-//       max_tokens: 500
-//     });
-
-//     return response.choices[0].message.content.trim();
-//   } catch (err) {
-//     console.error("OpenAI LLM error:", err.message);
-//     return "Sorry, I couldn't generate a response at the moment.";
-//   }
-// }
-
-/**
- * Generate reply using Groq
- */
-
-// const GROQ_API_KEY = process.env.GROK_API_KEY;
-
-// // console.log("here is the key",GROQ_API_KEY)
-// const groq = axios.create({
-//   baseURL: "https://api.groq.com/openai/v1/chat",
-//   headers: {
-//     "Authorization": `Bearer ${GROQ_API_KEY}`,
-//     "Content-Type": "application/json"
-//   }
-// });
-
-
-
-// export async function generateGroqReply2(
-//   messages,
-//   model = "llama-3.3-70b-versatile"
-// ) {
-//   try {
-//     if (!Array.isArray(messages) || messages.length === 0) {
-//       throw new Error("Messages must be a non-empty array");
-//     }
-
-//     const response = await groq.post("/completions", {
-//       model,
-//       messages,
-//       temperature: 0
-//     });
-
-//     return response.data.choices[0].message.content.trim();
-//   } catch (err) {
-//     console.error("Groq LLM error:", err.response?.data || err.message);
-//     return "Sorry, I couldn't generate a response at the moment.";
-//   }
-// }
-
 
 
 const GROQ_API_KEY = process.env.GROK_API_KEY;
@@ -122,6 +40,71 @@ function log(level, message, meta = {}) {
 }
 
 // ---------- Main ----------
+
+
+export async function generateOpenAIReply2(
+  messages,
+  model = "gpt-4o-mini"
+) {
+  if (!Array.isArray(messages) || messages.length === 0) {
+    throw new Error("Messages must be a non-empty array");
+  }
+
+  let attempt = 0;
+
+  while (attempt <= MAX_RETRIES) {
+    try {
+      log("info", "OpenAI request started", {
+        attempt,
+        model,
+        messageCount: messages.length,
+      });
+
+      const response = await openai.chat.completions.create({
+        model,
+        messages,
+        temperature: 0.2,
+        max_tokens: 500,
+        timeout: TIMEOUT_MS,
+      });
+
+      const reply = response?.choices?.[0]?.message?.content;
+
+      if (!reply) {
+        throw new Error("Empty response from OpenAI");
+      }
+
+      log("info", "OpenAI request success", { attempt });
+      return reply.trim();
+    } catch (err) {
+      const status = err?.response?.status;
+      const retryable = isRetryable(err);
+
+      log(
+        retryable ? "warn" : "error",
+        "OpenAI request failed",
+        {
+          attempt,
+          status,
+          retryable,
+          error: err.response?.data || err.message,
+        }
+      );
+
+      if (!retryable || attempt === MAX_RETRIES) break;
+
+      const delay = BASE_DELAY_MS * Math.pow(2, attempt);
+      await sleep(delay);
+
+      attempt++;
+    }
+  }
+
+  return "Sorry, I couldn't generate a response at the moment.";
+}
+
+
+
 export async function generateGroqReply2(
   messages,
   model = "llama-3.3-70b-versatile"
