@@ -124,7 +124,7 @@ Local embeddings are accurate enough for customer support use cases while keepin
 
 ---
 
-### LLM — Groq API (LLaMA Model)
+### LLM — OpenAi and Groq API (LLaMA Model) 
 
 **Why Groq**
 - Free API tier available
