@@ -3,7 +3,7 @@ import Document from "../db/models/document.model.js"
 import { l2Distance } from "pgvector/sequelize";
 
 
-import { TOP_K_LIMIT } from "../config/constants.js";
+import { TOP_K_LIMIT, VEC_MAX_DISTANCE } from "../config/constants.js";
 import sequelize from "../db/client.js";
 
 export async function ingestDocument(content) {
@@ -67,6 +67,8 @@ export async function searchDocuments3(query, limit = TOP_K_LIMIT) {
   }
 
   // ----------------- Business Intent Gate -----------------
+
+  //lets not use this later wil  add NLP  
   const BUSINESS_TERMS = [
     "spur", "pricing", "plan", "billing", "account",
     "feature", "subscription", "automation", "trial", "login", "payment"
@@ -95,8 +97,8 @@ export async function searchDocuments3(query, limit = TOP_K_LIMIT) {
   
   //console.log(vectorResults)
   // ----------------- FILTER VECTOR RESULTS BY DISTANCE -----------------
-  const MAX_DISTANCE = 1.9; // tune based on embedding scale
-  const filteredVectorResults = vectorResults.filter(d => d.get("distance")<= MAX_DISTANCE);
+
+  const filteredVectorResults = vectorResults.filter(d => d.get("distance")<= VEC_MAX_DISTANCE);
 
   // ----------------- TEXT SEARCH -----------------
   const textResults = await Document.findAll({

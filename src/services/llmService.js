@@ -95,7 +95,7 @@ const groq = axios.create({
     Authorization: `Bearer ${GROQ_API_KEY}`,
     "Content-Type": "application/json"
   },
-  timeout: 15_000 // ⏱ protect server
+  timeout: 15_000 // 
 });
 
 // ---------- Config ----------
