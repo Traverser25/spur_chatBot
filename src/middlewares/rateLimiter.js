@@ -6,7 +6,8 @@ const MAX_REQUESTS = 20;
 
 export function ipRateLimiter(req, res, next) {
   try {
-    const ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.socket.remoteAddress || req.ip;
+      const ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.socket.remoteAddress || req.ip;
+    console.log("incoming  request", ip)
     const now = Date.now();
     let entry = rateStore.get(ip);
 

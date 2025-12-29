@@ -16,7 +16,7 @@ export async function chatWithSession(sessionId, query) {
 
     let chatHistory = sessionHistories.get(sessionId);
 
-    console.log("HERE IS session id:", sessionId);
+   // console.log("HERE IS session id:", sessionId);
 
     // -------- RAG retrieval --------
     const documents = await searchDocuments3(query, TOP_K);

@@ -5,7 +5,7 @@ import { ingestDocument } from "./services/documentService.js";
 
 // Read file
 // const filePath = "C:\\Users\\HP\\Desktop\\spur_final\\src\\spur_know.txt";
-my_file="spur_know.txt"
+const  my_file="spur_know.txt"
 const filePath = path.join(process.cwd(), "src", my_file);
 const spurText = fs.readFileSync(filePath, "utf-8");
 
